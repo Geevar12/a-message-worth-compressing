@@ -1,0 +1,265 @@
+.eyebrow,
+.signature-note,
+.memory-note,
+.technical-whisper,
+.scene-caption,
+.open-button,
+.reconstruction,
+.verification {
+  font-family: var(--mono);
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0 0 28px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: rgba(36, 35, 31, 0.5);
+}
+
+.scene-intro h1 {
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.intro-copy {
+  margin: 30px 0 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.open-button {
+  margin-top: 38px;
+  padding: 12px 24px;
+  border: 1px solid rgba(36, 35, 31, 0.65);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.open-button:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+
+.signature-note {
+  margin: auto 0 0;
+  padding-top: 48px;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: rgba(36, 35, 31, 0.34);
+}
+
+.flow-label {
+  font-family: var(--mono);
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  letter-spacing: 0.14em;
+}
+
+.flow-label.muted {
+  color: rgba(36, 35, 31, 0.46);
+}
+
+.reconstruction {
+  margin-top: 1px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: rgba(36, 35, 31, 0.56);
+}
+
+.verification {
+  margin-top: 8px;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+}
+
+.scene-memory h2,
+.scene-birthday h2 {
+  margin: 0;
+  font-size: clamp(2.7rem, 8vw, 5.9rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.memory-note {
+  margin: 18px 0 0;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  color: rgba(36, 35, 31, 0.4);
+}
+
+.tree-edge,
+.tree-node {
+  opacity: 0;
+}
+
+.tree-edge {
+  stroke: currentColor;
+  stroke-width: 1;
+  animation: tree-reveal 700ms cubic-bezier(.22,.8,.2,1) var(--tree-delay, 0ms) forwards;
+}
+
+.tree-branch,
+.tree-node-label,
+.tree-node-meta {
+  fill: currentColor;
+  font-family: var(--mono);
+}
+
+.tree-branch {
+  font-size: 8px;
+  opacity: 0;
+  animation: branch-reveal 500ms ease var(--branch-delay, 0ms) forwards;
+}
+
+.tree-node {
+  animation: tree-reveal 700ms cubic-bezier(.22,.8,.2,1) var(--tree-delay, 0ms) forwards;
+}
+
+.tree-node circle {
+  fill: var(--paper);
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.tree-node-label {
+  font-size: 8px;
+}
+
+.tree-node-meta {
+  font-size: 7px;
+  opacity: 0.34;
+}
+
+.scene-caption {
+  margin: 8px 0 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: rgba(36, 35, 31, 0.34);
+}
+
+.memory-rule,
+.reveal-rule {
+  width: min(180px, 42vw);
+  height: 1px;
+  margin-top: 26px;
+  background: currentColor;
+  opacity: 0.18;
+}
+
+.reveal-rule {
+  width: min(120px, 32vw);
+  margin-top: 30px;
+}
+
+.scene.is-entering {
+  will-change: opacity, transform;
+}
+
+.scene.is-settled {
+  will-change: auto;
+}
+
+.compression-step,
+.compression-detail,
+.ssr-detail {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: compression-step-in 700ms cubic-bezier(.22,.8,.2,1) var(--step-delay, 0ms) forwards;
+}
+
+@keyframes compression-step-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tree-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.97);
+    transform-origin: center;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes branch-reveal {
+  to {
+    opacity: 0.38;
+  }
+}
+
+.memory-sequence,
+.connection-card,
+.connection-line,
+.reveal-title,
+.reveal-copy,
+.reveal-rule,
+.reveal-birthday {
+  opacity: 0;
+  transform: translateY(9px);
+  animation: gentle-reveal 700ms cubic-bezier(.22,.8,.2,1) forwards;
+}
+
+.memory-sequence:nth-child(1) { animation-delay: 650ms; }
+.memory-sequence:nth-child(2) { animation-delay: 1.35s; }
+.memory-sequence:nth-child(3) { animation-delay: 2.05s; }
+.memory-sequence:nth-child(4) { animation-delay: 2.75s; }
+.memory-sequence:nth-child(5) { animation-delay: 3.45s; }
+.memory-sequence:nth-child(6) { animation-delay: 4.15s; }
+.memory-sequence:nth-child(7) { animation-delay: 4.85s; }
+.memory-sequence:nth-child(8) { animation-delay: 5.55s; }
+.memory-sequence:nth-child(9) { animation-delay: 6.25s; }
+
+.connection-card:nth-child(1) { animation-delay: 650ms; }
+.connection-card:nth-child(2) { animation-delay: 1.8s; }
+.connection-line { animation-delay: 3.25s; }
+
+.reveal-title { animation-delay: 650ms; }
+.reveal-copy { animation-delay: 1.75s; }
+.reveal-rule { animation-delay: 2.9s; }
+.reveal-birthday { animation-delay: 3.55s; }
+
+@keyframes gentle-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .open-button {
+    transition: none;
+  }
+
+  .compression-step,
+  .compression-detail,
+  .ssr-detail,
+  .tree-edge,
+  .tree-node,
+  .tree-branch,
+  .memory-sequence,
+  .connection-card,
+  .connection-line,
+  .reveal-title,
+  .reveal-copy,
+  .reveal-rule,
+  .reveal-birthday {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

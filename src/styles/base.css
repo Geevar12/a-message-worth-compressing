@@ -1,0 +1,55 @@
+:root {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #24231f;
+  background: #eee9df;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --paper: #f8f5ed;
+  --ink: #24231f;
+  --muted: rgba(36, 35, 31, 0.58);
+  --faint: rgba(36, 35, 31, 0.18);
+  --hairline: rgba(36, 35, 31, 0.12);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: #eee9df;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    linear-gradient(rgba(36, 35, 31, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 35, 31, 0.014) 1px, transparent 1px),
+    #eee9df;
+  background-size: 34px 34px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(36, 35, 31, 0.14);
+}
+
+:focus-visible {
+  outline: 2px solid rgba(36, 35, 31, 0.48);
+  outline-offset: 5px;
+}
